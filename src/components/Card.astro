@@ -1,0 +1,19 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+
+export interface Props {
+  tag?: keyof JSX.DefinedIntrinsicElements;
+}
+
+const { tag } = Astro.props;
+const Component = tag || "div";
+---
+
+<Component class="flex flex-col sm:flex-row gap-4">
+  <div class="w-full max-w-32 flex sm:justify-end">
+    <slot name="image" />
+  </div>
+  <div>
+    <slot name="content" />
+  </div>
+</Component>

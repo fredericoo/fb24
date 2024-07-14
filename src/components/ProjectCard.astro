@@ -1,0 +1,57 @@
+---
+import Card from "./Card.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  href?: string;
+}
+export type ProjectCardProps = Props;
+
+const { title, description, href } = Astro.props;
+---
+
+<Card tag="div">
+  <svg
+    slot="image"
+    width="68"
+    height="68"
+    viewBox="0 0 68 68"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="0.5"
+      y="0.5"
+      width="67"
+      height="67"
+      rx="16.5"
+      stroke="#E9EDEF"
+      style="stroke:#E9EDEF;stroke:color(display-p3 0.9137 0.9294 0.9373);stroke-opacity:1;"
+    ></rect>
+  </svg>
+
+  <Fragment slot="content">
+    <header class="lowercase text-sm">
+      <h3 class="text-neutral-8">
+        {
+          href ? (
+            <a
+              class="hover:bg-neutral-2 active:bg-neutral-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-7 px-2 -mx-2 py-1 -my-1 rounded-lg"
+              href={href}
+            >
+              {title}
+              <span class="not-sr-only">↗️</span>
+            </a>
+          ) : (
+            title
+          )
+        }
+      </h3>
+    </header>
+
+    <p class="text-neutral-6 lowercase text-pretty text-sm">
+      {description}
+    </p>
+  </Fragment>
+</Card>

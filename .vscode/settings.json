@@ -1,0 +1,14 @@
+{
+	"editor.formatOnSave": true,
+	"editor.rulers": [140],
+	"workbench.tree.indent": 16,
+	"editor.tabSize": 2,
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"editor.defaultFormatter": "biomejs.biome",
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
+}

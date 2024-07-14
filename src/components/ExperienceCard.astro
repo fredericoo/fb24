@@ -1,0 +1,44 @@
+---
+import Card from "./Card.astro";
+
+interface Props {
+  title: string;
+  fromYear: number;
+  toYear?: number;
+  description: string;
+  image: ImageMetadata;
+}
+export type ExperienceCardProps = Props;
+
+const { title, fromYear, toYear, description, image } = Astro.props;
+---
+
+<Card tag="div">
+  <img
+    slot="image"
+    src={image.src}
+    width={image.width}
+    height={image.height}
+    alt={`${title}’s logo`}
+  />
+  <Fragment slot="content">
+    <header class="flex gap-1.5 lowercase text-sm">
+      <h3 class="text-neutral-8">
+        {title}
+      </h3>
+      <div class="inline text-neutral-8">
+        (<time datetime={fromYear.toString()}>{fromYear}</time>—{
+          toYear ? (
+            <time datetime={toYear.toString()}>{toYear}</time>
+          ) : (
+            "Present"
+          )
+        })
+      </div>
+    </header>
+
+    <p class="text-neutral-6 lowercase text-pretty text-sm">
+      {description}
+    </p>
+  </Fragment>
+</Card>

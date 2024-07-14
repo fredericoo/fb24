@@ -1,0 +1,148 @@
+---
+import Card from "../components/Card.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { experience, openSource, projects } from "../content";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Freddie"
+  description="product engineer at the intersection of design and web development"
+>
+  <main class="mx-auto max-w-screen-md px-4 py-32 flex flex-col gap-8">
+    <Card>
+      <h1
+        slot="content"
+        class="text-4xl text-neutral-8 lowercase tracking-tighter text-balance"
+      >
+        I’m <span class="font-semibold">Freddie</span>, product engineer* at the
+        intersection of design & web development.
+      </h1>
+    </Card>
+
+    <Card tag="aside">
+      <p slot="image" class="lowercase text-neutral-8 text-balance text-md">
+        *
+      </p>
+      <Fragment slot="content">
+        <p class="lowercase text-neutral-7 text-balance text-sm">
+          Product engineering is an umbrella term for product-oriented software
+          developers. in particular, I’m focused in design, backend and frontend
+          web development.
+        </p>
+
+        <svg
+          width="235"
+          height="32"
+          viewBox="0 0 235 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="mt-2 -ml-0.5"
+        >
+          <path
+            d="M0.5 16C0.5 7.43959 7.43959 0.5 16 0.5H48C53.7589 0.5 58.785 3.64044 61.4579 8.30461C62.1776 9.56047 63.4774 10.5 65 10.5C66.5226 10.5 67.8224 9.56047 68.5421 8.30461C71.215 3.64044 76.2411 0.5 82 0.5H150C155.932 0.5 161.086 3.83189 163.692 8.72858C164.237 9.75252 165.282 10.5 166.5 10.5C167.718 10.5 168.763 9.75252 169.308 8.72858C171.914 3.83189 177.068 0.5 183 0.5H219C227.56 0.5 234.5 7.43959 234.5 16C234.5 24.5604 227.56 31.5 219 31.5H183C177.068 31.5 171.914 28.1681 169.308 23.2714C168.763 22.2475 167.718 21.5 166.5 21.5C165.282 21.5 164.237 22.2475 163.692 23.2714C161.086 28.1681 155.932 31.5 150 31.5H82C76.2411 31.5 71.215 28.3596 68.5421 23.6954C67.8224 22.4395 66.5226 21.5 65 21.5C63.4774 21.5 62.1776 22.4395 61.4579 23.6954C58.785 28.3596 53.7589 31.5 48 31.5H16C7.43959 31.5 0.5 24.5604 0.5 16Z"
+            class="stroke-neutral-3"
+            stroke="1"></path>
+
+          <text x="12" y="20" class="fill-neutral-7 text-xs">Design</text>
+          <text x="82" y="20" class="fill-neutral-7 text-xs">Engineering</text>
+          <text x="178" y="20" class="fill-neutral-7 text-xs">Product</text>
+        </svg>
+      </Fragment>
+    </Card>
+
+    <section class="flex flex-col gap-4">
+      <Card>
+        <h2
+          slot="content"
+          class="font-semibold text-sm tracking-tight lowercase text-neutral-8"
+        >
+          Latest experience
+        </h2>
+      </Card>
+
+      <ol class="flex flex-col gap-4">
+        {
+          experience.map((item) => (
+            <li>
+              <ExperienceCard {...item} />
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="flex flex-col gap-4">
+      <Card>
+        <h2
+          slot="content"
+          class="font-semibold text-sm tracking-tight lowercase text-neutral-8"
+        >
+          Open Source
+        </h2>
+      </Card>
+
+      <ol class="flex flex-col gap-4">
+        {
+          openSource.map((item) => (
+            <li>
+              <ProjectCard {...item} />
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="flex flex-col gap-4">
+      <Card>
+        <h2
+          slot="content"
+          class="font-semibold text-sm tracking-tight lowercase text-neutral-8"
+        >
+          Selected Projects
+        </h2>
+      </Card>
+
+      <ol class="flex flex-col gap-4">
+        {
+          projects.map((item) => (
+            <li>
+              <ProjectCard {...item} />
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="flex flex-col gap-4">
+      <Card>
+        <h2
+          slot="content"
+          class="font-semibold text-sm tracking-tight lowercase text-neutral-8"
+        >
+          Contact
+        </h2>
+      </Card>
+
+      <Card>
+        <ol slot="content" class="flex gap-2 -mx-1.5">
+          <li>
+            <a
+              href="https://x.com/frederic_ooo"
+              class="lowercase text-neutral-8 text-sm bg-neutral-2 hover:bg-neutral-3 active:bg-neutral-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-7 px-3 py-2 rounded-full"
+              >Twitter / x</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/fredericoo"
+              class="lowercase text-neutral-8 text-sm bg-neutral-2 hover:bg-neutral-3 active:bg-neutral-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-7 px-3 py-2 rounded-full"
+              >GitHub
+            </a>
+          </li>
+        </ol>
+      </Card>
+    </section>
+  </main>
+</Layout>
