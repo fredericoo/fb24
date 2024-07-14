@@ -9,7 +9,7 @@ const { tag } = Astro.props;
 const Component = tag || "div";
 ---
 
-<Component class="flex flex-col sm:flex-row gap-4">
+<Component class="flex flex-col sm:flex-row gap-2 md:gap-4">
   <div class="w-full max-w-32 flex sm:justify-end">
     <slot name="image" />
   </div>
