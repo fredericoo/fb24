@@ -3,6 +3,9 @@ import type { ProjectCardProps } from './components/ProjectCard.astro';
 import Inploi from './assets/inploi.svg';
 import Winden from './assets/winden.svg';
 import Teya from './assets/teya.svg';
+import ReactRouterTypesafe from './assets/react-router-typesafe.svg';
+import DrizzleToolbelt from './assets/drizzle-toolbelt.svg';
+import ZustandContext from './assets/zustand-context.svg';
 
 export const experience: ExperienceCardProps[] = [
 	{
@@ -48,18 +51,21 @@ export const openSource: ProjectCardProps[] = [
 		title: 'React Router Typesafe',
 		description: 'Small typescript library to add type hints to parts of react router 6 that makes it more ergonomic to develop with.',
 		href: 'https://github.com/fredericoo/react-router-typesafe',
+		image: ReactRouterTypesafe,
 	},
 	{
 		title: 'Drizzle Toolbelt',
 		description:
 			'Set of utilities to make interacting with queries in Drizzle ORM easier, such as aggregate, transform, and take functions.',
 		href: 'https://github.com/fredericoo/drizzle-toolbelt',
+		image: DrizzleToolbelt,
 	},
 	{
 		title: 'Zustand Context',
 		description:
 			'Wraps a zustand store in context. useful for making independent zustand stores per-component or making zustand easier to unit test.',
 		href: 'https://github.com/fredericoo/zustand-context',
+		image: ZustandContext,
 	},
 	{
 		title: 'Tome TCG',
