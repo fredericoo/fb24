@@ -6,6 +6,9 @@ import Teya from './assets/teya.svg';
 import ReactRouterTypesafe from './assets/react-router-typesafe.svg';
 import DrizzleToolbelt from './assets/drizzle-toolbelt.svg';
 import ZustandContext from './assets/zustand-context.svg';
+import InploiSdk from './assets/inploi-sdk.svg';
+import InploiDashboard from './assets/inploi-dashboard.svg';
+import WindenUi from './assets/winden-ui.svg';
 
 export const experience: ExperienceCardProps[] = [
 	{
@@ -34,15 +37,20 @@ export const projects: ProjectCardProps[] = [
 	{
 		title: 'Inploi SDK',
 		description:
-			'The official Software Development Kit for Inploi. consists of 8 packages (and counting) with lightweight ways to implement features of the inploi platform on any website, such as chatbot, job search and job alerts.',
+			'The official Software Development Kit for Inploi. consists of 8 packages (and counting) with a core and many lightweight ways to implement features of the inploi platform on any website, such as chatbot, job search and job alerts.',
+		href: 'https://www.npmjs.com/package/@inploi/sdk',
+		image: InploiSdk,
 	},
 	{
 		title: 'Inploi Dashboard',
 		description: 'Customer-facing dashboard built on Remix as a BFF interplaying with the Laravel api that powers the inploi platform.',
+		image: InploiDashboard,
 	},
 	{
 		title: 'Winden UI',
 		description: 'Internal design system library with about 50 components. built for React, styled with Vanilla Extract.',
+		href: 'https://vite-and-design-system-ui-docs.vercel.app/?path=/story/atoms-amountinput--uncontrolled-default',
+		image: WindenUi,
 	},
 ];
 
