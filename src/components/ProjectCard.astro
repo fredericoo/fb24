@@ -1,14 +1,14 @@
 ---
-import Card from "./Card.astro";
-import type { StargazersCountProps } from "./StargazersCount.astro";
-import StargazersCount from "./StargazersCount.astro";
+import Card from './Card.astro';
+import type { StargazersCountProps } from './StargazersCount.astro';
+import StargazersCount from './StargazersCount.astro';
 
 interface Props {
-  title: string;
-  description: string;
-  href?: string;
-  image?: ImageMetadata;
-  githubStars?: StargazersCountProps;
+	title: string;
+	description: string;
+	href?: string;
+	image?: ImageMetadata;
+	githubStars?: StargazersCountProps;
 }
 export type ProjectCardProps = Props;
 
@@ -62,7 +62,7 @@ const { title, description, href, image, githubStars } = Astro.props;
             </a>
           ) : (
             <>
-              title {githubStars ? <StargazersCount {...githubStars} /> : null}
+              {title} {githubStars ? <StargazersCount {...githubStars} /> : null}
             </>
           )
         }
