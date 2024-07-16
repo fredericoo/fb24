@@ -1,15 +1,18 @@
 ---
 import Card from "./Card.astro";
+import type { StargazersCountProps } from "./StargazersCount.astro";
+import StargazersCount from "./StargazersCount.astro";
 
 interface Props {
   title: string;
   description: string;
   href?: string;
   image?: ImageMetadata;
+  githubStars?: StargazersCountProps;
 }
 export type ProjectCardProps = Props;
 
-const { title, description, href, image } = Astro.props;
+const { title, description, href, image, githubStars } = Astro.props;
 ---
 
 <Card tag="div">
@@ -53,11 +56,14 @@ const { title, description, href, image } = Astro.props;
               class="hover:bg-neutral-2 active:bg-neutral-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-7 px-2 -mx-2 py-1 -my-1 rounded-lg"
               href={href}
             >
-              {title}
+              {title}{" "}
+              {githubStars ? <StargazersCount {...githubStars} /> : null}
               <span class="not-sr-only">&#8599;</span>
             </a>
           ) : (
-            title
+            <>
+              title {githubStars ? <StargazersCount {...githubStars} /> : null}
+            </>
           )
         }
       </h3>

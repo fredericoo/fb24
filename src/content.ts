@@ -60,6 +60,7 @@ export const openSource: ProjectCardProps[] = [
 		description: 'Small typescript library to add type hints to parts of react router 6 that makes it more ergonomic to develop with.',
 		href: 'https://github.com/fredericoo/react-router-typesafe',
 		image: ReactRouterTypesafe,
+		githubStars: { author: 'fredericoo', repo: 'react-router-typesafe' },
 	},
 	{
 		title: 'Drizzle Toolbelt',
@@ -67,6 +68,7 @@ export const openSource: ProjectCardProps[] = [
 			'Set of utilities to make interacting with queries in Drizzle ORM easier, such as aggregate, transform, and take functions.',
 		href: 'https://github.com/fredericoo/drizzle-toolbelt',
 		image: DrizzleToolbelt,
+		githubStars: { author: 'fredericoo', repo: 'drizzle-toolbelt' },
 	},
 	{
 		title: 'Zustand Context',
@@ -74,6 +76,7 @@ export const openSource: ProjectCardProps[] = [
 			'Wraps a zustand store in context. useful for making independent zustand stores per-component or making zustand easier to unit test.',
 		href: 'https://github.com/fredericoo/zustand-context',
 		image: ZustandContext,
+		githubStars: { author: 'fredericoo', repo: 'zustand-context' },
 	},
 	{
 		title: 'Tome TCG',

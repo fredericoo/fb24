@@ -1,0 +1,34 @@
+---
+interface Props {
+	author: string;
+	repo: string;
+}
+
+export type StargazersCountProps = Props;
+
+const { author, repo } = Astro.props;
+const count = fetch(`https://api.github.com/repos/${author}/${repo}`)
+	.then((res) => res.json())
+	.then((data) => data.stargazers_count || 0);
+---
+
+{
+  count ? (
+    <span>
+      (<svg
+      role="img"
+        class="inline -translate-y-[0.075em]"
+        xmlns="http://www.w3.org/2000/svg"
+        width="12"
+        height="12"
+        viewBox="0 0 24 24"
+        stroke-width="2.5"
+        stroke="currentColor"
+        fill="none"
+      >
+        <title>Stars:</title>
+        <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+      </svg>&ThinSpace;{count})
+    </span>
+  ) : null
+}
