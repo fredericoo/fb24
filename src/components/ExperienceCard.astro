@@ -1,16 +1,17 @@
 ---
-import Card from "./Card.astro";
+import Card from './Card.astro';
 
 interface Props {
-  title: string;
-  fromYear: number;
-  toYear?: number;
-  description: string;
-  image: ImageMetadata;
+	title: string;
+	fromYear: number;
+	toYear?: number;
+	description: string;
+	companyDescription: string;
+	image: ImageMetadata;
 }
 export type ExperienceCardProps = Props;
 
-const { title, fromYear, toYear, description, image } = Astro.props;
+const { title, fromYear, toYear, description, companyDescription, image } = Astro.props;
 ---
 
 <Card tag="div">
@@ -26,6 +27,7 @@ const { title, fromYear, toYear, description, image } = Astro.props;
       <h3 class="text-neutral-8">
         {title}
       </h3>
+      
       <div class="inline text-neutral-8">
         (<time datetime={fromYear.toString()}>{fromYear}</time>—{
           toYear ? (
@@ -37,6 +39,7 @@ const { title, fromYear, toYear, description, image } = Astro.props;
       </div>
     </header>
 
+    <p class="text-neutral-6 lowercase text-pretty text-sm">{companyDescription}</p>
     <p class="text-neutral-6 lowercase text-pretty text-sm">
       {description}
     </p>

@@ -13,12 +13,14 @@ import WindenUi from './assets/winden-ui.svg';
 export const experience: ExperienceCardProps[] = [
 	{
 		title: 'Inploi',
+		companyDescription: 'Hiring-tech, united kingdom',
 		fromYear: 2023,
-		description: 'Product engineer building the dashboard, sdk and other projects.',
+		description: 'Product engineer currently building the dashboard, SDK, a custom CMS, & more.',
 		image: Inploi,
 	},
 	{
 		title: 'Winden',
+		companyDescription: 'Fintech, united states (remote)',
 		fromYear: 2022,
 		toYear: 2023,
 		description: 'Frontend platform engineer, introduced design system internal library, refactor & tests to modernise legacy codebase.',
@@ -26,6 +28,7 @@ export const experience: ExperienceCardProps[] = [
 	},
 	{
 		title: 'Teya',
+		companyDescription: 'Fintech, united kingdom',
 		fromYear: 2021,
 		toYear: 2022,
 		description: 'Frontend engineer, led the frontend development for customer-facing dashboard.',
