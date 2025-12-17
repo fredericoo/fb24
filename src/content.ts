@@ -9,12 +9,21 @@ import ZustandContext from './assets/zustand-context.svg';
 import InploiSdk from './assets/inploi-sdk.svg';
 import InploiDashboard from './assets/inploi-dashboard.svg';
 import WindenUi from './assets/winden-ui.svg';
+import Shopify from './assets/shopify.svg';
 
 export const experience: ExperienceCardProps[] = [
+  {
+    title: 'Shopify',
+    companyDescription: 'E-commerce, canada',
+    fromYear: 2025,
+    description: 'Product engineer in the Online Store team.',
+    image: Shopify,
+  },
 	{
 		title: 'Inploi',
 		companyDescription: 'Hiring-tech, united kingdom',
 		fromYear: 2023,
+    toYear: 2025,
 		description: 'Product engineer currently building the dashboard, SDK, a custom CMS, & more.',
 		image: Inploi,
 	},
@@ -80,11 +89,5 @@ export const openSource: ProjectCardProps[] = [
 		href: 'https://github.com/fredericoo/zustand-context',
 		image: ZustandContext,
 		githubStars: { author: 'fredericoo', repo: 'zustand-context' },
-	},
-	{
-		title: 'Tome TCG',
-		description:
-			'Real-time card game with quick and meta-game oriented matches. currently in progress, being built with Bun, Elysia, React.',
-		href: 'https://github.com/fredericoo/tome-tcg',
-	},
+	}
 ];
